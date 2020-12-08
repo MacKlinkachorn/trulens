@@ -1,0 +1,42 @@
+# Multiple stages and jobs on each stage test
+trigger:
+- none
+pool:
+  vmImage: 'ubuntu-16.04'
+
+stages:
+- stage: First
+  jobs:
+  - job: A1
+    steps:
+    - script: echo This is the trigger.
+      displayName: 'ONE'
+
+
+  - job: A2
+    steps:
+    - script: echo This is the trigger.
+      displayName: 'TWO'
+
+- stage: Second
+  jobs:
+  - job: B1
+    steps:
+    - script: echo This is the trigger.
+      displayName: 'THREE'
+
+  - job: B2
+    steps:
+    - script: echo This is the trigger.
+      displayName: 'FOUR'
+
+- stage: Third
+  jobs:
+  - job: C1
+    steps:
+    - script: echo This is the trigger.
+      displayName: 'FIVE'
+  - job: C2
+    steps:
+    - script: echo This is the trigger.
+      displayName: 'SIX'
