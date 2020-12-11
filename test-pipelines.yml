@@ -38,7 +38,7 @@ stages:
 
     steps:
 
-   - script: echo This is a Test for test $(TestNumber).
+    - script: echo This is a Test for test $(TestNumber).
 
       displayName: 'First Step'
 
